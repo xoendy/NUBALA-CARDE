@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>NEBULA ARCADE | Jogos Online Grátis</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Particles Background -->
+    <div id="particles-bg"></div>
+
+    <!-- Navigation -->
+    <nav class="main-nav" id="mainNav">
+        <div class="nav-brand">
+            <div class="logo-icon">⚡</div>
+            <span class="logo-text">NEBULA<span class="logo-accent">ARCADE</span></span>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="nav-link active" data-section="home">Jogos</a></li>
+            <li><a href="#ranking" class="nav-link" data-section="ranking">Ranking</a></li>
+            <li><a href="#login" class="nav-link" data-section="login" id="loginNavLink">Entrar</a></li>
+        </ul>
+        <div class="user-badge hidden" id="userBadge">
+            <span class="user-name" id="userNameDisplay"></span>
+            <button class="btn-logout" id="btnLogout">Sair</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- HOME / GAMES GRID -->
+        <section id="home" class="section section-home active">
+            <div class="hero-bar">
+                <h1 class="hero-title">
+                    <span class="glitch" data-text="NEBULA">NEBULA</span>
+                    <span class="glitch accent" data-text="ARCADE">ARCADE</span>
+                </h1>
+                <p class="hero-subtitle">5 jogos épicos. Um só lugar. Jogue agora!</p>
+            </div>
+
+            <!-- Games Grid - Estilo Friv -->
+            <div class="games-grid" id="gamesGrid">
+
+                <!-- Game 1: Space Shooter -->
+                <div class="game-card" data-game="space-shooter">
+                    <div class="game-thumb">
+                        <div class="game-preview" id="preview-space-shooter">
+                            <canvas class="preview-canvas" width="280" height="200"></canvas>
+                        </div>
+                        <div class="game-overlay-hover">
+                            <button class="btn-play">
+                                <span class="play-icon">▶</span>
+                                <span>JOGAR</span>
+                            </button>
+                        </div>
+                        <div class="game-badge hot">🔥 HOT</div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Space Shooter</h3>
+                        <p class="game-desc">Defenda a galáxia de hordas alienígenas!</p>
+                        <div class="game-meta">
+                            <span class="game-tag action">Ação</span>
+                            <span class="game-plays">👁 12.4k</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game 2: Neon Snake -->
+                <div class="game-card" data-game="neon-snake">
+                    <div class="game-thumb">
+                        <div class="game-preview" id="preview-neon-snake">
+                            <canvas class="preview-canvas" width="280" height="200"></canvas>
+                        </div>
+                        <div class="game-overlay-hover">
+                            <button class="btn-play">
+                                <span class="play-icon">▶</span>
+                                <span>JOGAR</span>
+                            </button>
+                        </div>
+                        <div class="game-badge new">✨ NEW</div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Neon Snake</h3>
+                        <p class="game-desc">O clássico cobrinha com estilo neon!</p>
+                        <div class="game-meta">
+                            <span class="game-tag arcade">Arcade</span>
+                            <span class="game-plays">👁 8.7k</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game 3: Cyber Breaker -->
+                <div class="game-card" data-game="cyber-breaker">
+                    <div class="game-thumb">
+                        <div class="game-preview" id="preview-cyber-breaker">
+                            <canvas class="preview-canvas" width="280" height="200"></canvas>
+                        </div>
+                        <div class="game-overlay-hover">
+                            <button class="btn-play">
+                                <span class="play-icon">▶</span>
+                                <span>JOGAR</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Cyber Breaker</h3>
+                        <p class="game-desc">Destrua todos os blocos no ritmo cyberpunk!</p>
+                        <div class="game-meta">
+                            <span class="game-tag puzzle">Puzzle</span>
+                            <span class="game-plays">👁 6.2k</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game 4: Void Runner -->
+                <div class="game-card" data-game="void-runner">
+                    <div class="game-thumb">
+                        <div class="game-preview" id="preview-void-runner">
+                            <canvas class="preview-canvas" width="280" height="200"></canvas>
+                        </div>
+                        <div class="game-overlay-hover">
+                            <button class="btn-play">
+                                <span class="play-icon">▶</span>
+                                <span>JOGAR</span>
+                            </button>
+                        </div>
+                        <div class="game-badge popular">⭐ POP</div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Void Runner</h3>
+                        <p class="game-desc">Corra pelo vazio e desvie dos obstáculos!</p>
+                        <div class="game-meta">
+                            <span class="game-tag runner">Runner</span>
+                            <span class="game-plays">👁 9.1k</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game 5: Neon Pong -->
+                <div class="game-card" data-game="neon-pong">
+                    <div class="game-thumb">
+                        <div class="game-preview" id="preview-neon-pong">
+                            <canvas class="preview-canvas" width="280" height="200"></canvas>
+                        </div>
+                        <div class="game-overlay-hover">
+                            <button class="btn-play">
+                                <span class="play-icon">▶</span>
+                                <span>JOGAR</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Neon Pong</h3>
+                        <p class="game-desc">O clássico Pong com visual futurista!</p>
+                        <div class="game-meta">
+                            <span class="game-tag sports">Esporte</span>
+                            <span class="game-plays">👁 5.3k</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- GAME PLAYER SECTION -->
+        <section id="game-player" class="section section-game-player hidden">
+            <div class="game-player-header">
+                <button class="btn btn-back" id="btnBackToGames">
+                    <span>←</span> VOLTAR AOS JOGOS
+                </button>
+                <h2 class="game-player-title" id="currentGameTitle">Space Shooter</h2>
+                <div class="game-player-actions">
+                    <button class="btn btn-icon" id="btnFullscreen" title="Tela Cheia">⛶</button>
+                    <button class="btn btn-icon" id="btnSound" title="Som">🔊</button>
+                </div>
+            </div>
+
+            <div class="game-player-wrapper">
+                <div class="game-sidebar">
+                    <div class="game-info-panel glass">
+                        <h3 class="panel-title">STATUS</h3>
+                        <div class="info-row">
+                            <span class="info-label">Pontuação</span>
+                            <span class="info-value" id="scoreValue">0</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Nível</span>
+                            <span class="info-value" id="levelValue">1</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Vidas</span>
+                            <span class="info-value lives" id="livesValue">❤❤❤</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Tempo</span>
+                            <span class="info-value" id="timeValue">00:00</span>
+                        </div>
+                    </div>
+
+                    <div class="controls-panel glass">
+                        <h3 class="panel-title">CONTROLES</h3>
+                        <div class="control-list" id="controlsList">
+                            <!-- Populated by game -->
+                        </div>
+                    </div>
+
+                    <div class="leaderboard-mini glass">
+                        <h3 class="panel-title">TOP 3</h3>
+                        <div class="mini-leaderboard" id="miniLeaderboard">
+                            <!-- Populated by game -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-canvas-area">
+                    <canvas id="mainGameCanvas" width="800" height="600"></canvas>
+
+                    <!-- Game Overlays -->
+                    <div class="game-overlay" id="startScreen">
+                        <div class="overlay-content glass">
+                            <h2 class="overlay-title" id="startTitle">PRONTO?</h2>
+                            <p class="overlay-text" id="startDesc">Clique para iniciar a missão</p>
+                            <button class="btn btn-primary btn-glow btn-large" id="btnStartGame">
+                                <span class="btn-icon">▶</span> JOGAR
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="game-overlay hidden" id="gameOverScreen">
+                        <div class="overlay-content glass">
+                            <h2 class="overlay-title gameover">GAME OVER</h2>
+                            <div class="final-score">
+                                <span class="score-label">Pontuação</span>
+                                <span class="score-number" id="finalScore">0</span>
+                            </div>
+                            <div class="final-stats" id="finalStats">
+                                <!-- Populated by game -->
+                            </div>
+                            <div class="overlay-actions">
+                                <button class="btn btn-primary btn-glow" id="btnRestart">
+                                    <span class="btn-icon">↻</span> JOGAR NOVAMENTE
+                                </button>
+                                <button class="btn btn-secondary" id="btnSaveScore">
+                                    <span class="btn-icon">💾</span> SALVAR
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="game-overlay hidden" id="pauseScreen">
+                        <div class="overlay-content glass">
+                            <h2 class="overlay-title">PAUSADO</h2>
+                            <button class="btn btn-primary" id="btnResume">CONTINUAR</button>
+                            <button class="btn btn-secondary" id="btnQuit">SAIR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RANKING SECTION -->
+        <section id="ranking" class="section section-ranking">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-icon">🏆</span>
+                    RANKING GLOBAL
+                </h2>
+                <p class="section-desc">Os melhores jogadores do universo</p>
+            </div>
+
+            <div class="ranking-filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="week">Semana</button>
+                <button class="filter-btn" data-filter="today">Hoje</button>
+            </div>
+
+            <div class="ranking-tabs">
+                <button class="rank-tab active" data-game="all">Todos os Jogos</button>
+                <button class="rank-tab" data-game="space-shooter">Space Shooter</button>
+                <button class="rank-tab" data-game="neon-snake">Neon Snake</button>
+                <button class="rank-tab" data-game="cyber-breaker">Cyber Breaker</button>
+                <button class="rank-tab" data-game="void-runner">Void Runner</button>
+                <button class="rank-tab" data-game="neon-pong">Neon Pong</button>
+            </div>
+
+            <div class="ranking-container glass">
+                <div class="ranking-table-wrapper">
+                    <table class="ranking-table" id="rankingTable">
+                        <thead>
+                            <tr>
+                                <th class="col-rank">#</th>
+                                <th class="col-player">Jogador</th>
+                                <th class="col-game">Jogo</th>
+                                <th class="col-score">Pontos</th>
+                                <th class="col-level">Nível</th>
+                                <th class="col-date">Data</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rankingBody">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="ranking-pagination">
+                    <button class="page-btn" id="prevPage" disabled>← Anterior</button>
+                    <span class="page-info" id="pageInfo">Página 1 de 1</span>
+                    <button class="page-btn" id="nextPage" disabled>Próxima →</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- LOGIN SECTION -->
+        <section id="login" class="section section-login">
+            <div class="auth-container">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" data-tab="login">ENTRAR</button>
+                    <button class="auth-tab" data-tab="register">CADASTRAR</button>
+                </div>
+
+                <div class="auth-form-wrapper glass">
+                    <form class="auth-form" id="loginForm">
+                        <h2 class="auth-title">Bem-vindo de volta</h2>
+                        <div class="form-group">
+                            <label class="form-label">Usuário ou Email</label>
+                            <input type="text" class="form-input" id="loginUser" placeholder="piloto@nebula.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Senha</label>
+                            <input type="password" class="form-input" id="loginPass" placeholder="••••••••" required>
+                        </div>
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="rememberMe">
+                                <span class="checkmark"></span>
+                                Lembrar-me
+                            </label>
+                            <a href="#" class="form-link">Esqueceu?</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-glow btn-full">ENTRAR</button>
+                    </form>
+
+                    <form class="auth-form hidden" id="registerForm">
+                        <h2 class="auth-title">Criar conta</h2>
+                        <div class="form-group">
+                            <label class="form-label">Nome de usuário</label>
+                            <input type="text" class="form-input" id="regName" placeholder="SeuNick" required minlength="3" maxlength="20">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-input" id="regEmail" placeholder="email@exemplo.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Senha</label>
+                            <input type="password" class="form-input" id="regPass" placeholder="Mínimo 6 caracteres" required minlength="6">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Confirmar senha</label>
+                            <input type="password" class="form-input" id="regPassConfirm" placeholder="Repita a senha" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-glow btn-full">CRIAR CONTA</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="logo-text">NEBULA<span class="logo-accent">ARCADE</span></span>
+                <p class="footer-tagline">Jogos online grátis desde 2026</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Jogos</h4>
+                    <a href="#" data-game="space-shooter">Space Shooter</a>
+                    <a href="#" data-game="neon-snake">Neon Snake</a>
+                    <a href="#" data-game="cyber-breaker">Cyber Breaker</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Conta</h4>
+                    <a href="#login">Entrar</a>
+                    <a href="#login">Cadastrar</a>
+                    <a href="#ranking">Ranking</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Sobre</h4>
+                    <a href="#">Como Jogar</a>
+                    <a href="#">Contato</a>
+                    <a href="#">Termos</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Nebula Arcade. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
